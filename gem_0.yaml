@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_0
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "An abandoned gothic cathedral interior, towering ribbed arches, overgrown with dried moss and crawling ivy. Columns of dusty amber sunlight pierce the gloom through shattered stained-glass windows. Entirely silent and forgotten."
+    seed: 100
+  "00:03:00": 
+    prompt: "The gothic cathedral interior undergoes a sinister transformation. The stone arches subtly warp into a ribcage of massive proportions, with concrete textures giving way to polished, ancient ivory bone. The floor is cracked, covered in black dust and tiny glowing embers."
+    seed: 200
+  "00:06:00": 
+    prompt: "A colossal hollow biomechanical skeletal cathedral. Towering ribs form a cage breathing in the warm orange-tinted sulfur fog. Dark fleshy membranes stretch between the bone arches, under a ceiling of infinite darkness and distant void stars."
+    seed: 300
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "deep haunting pipe organ, slow ominous choral chants, dark gothic cathedral drone, reverberating chthonic keys"

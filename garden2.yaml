@@ -1,0 +1,25 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 7
+  output_fps: 30
+  output_dir: output/garden2
+  sparse_fps: 0.2  # Generates 1 frame every 5 seconds
+engine: "fal-flux"
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.2
+keyframes:
+  "00:00:00": 
+    prompt: "It is spring in a colorful garden.  There is a stone walkway in the circle around a central planting area.  There are trees in the areas around the walkway.  The walkway extends towards the camera."
+    seed: 12
+  "00:02:00": 
+    prompt: "The garden is in full summer bloom."
+    seed: 88
+  "00:04:00": 
+    prompt: "It is fall in the garden.  Some shrubs are still green but the trees are mostly bare."
+    seed: 1024
+  "00:06:00": 
+    prompt: "It is winter in the garden.  The trees are now long black monsters."
+    seed: 713

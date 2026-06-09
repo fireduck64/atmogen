@@ -1,0 +1,16 @@
+video:
+  width: 1024
+  height: 576
+  duration_minutes: 60
+  output_fps: 30
+  sparse_fps: 0.2  # Generates 1 frame every 5 seconds
+keyframes:
+  "00:00:00": 
+    prompt: "A desolate post-apocalyptic cityscape, heavy fog, brutalist architecture"
+    seed: 42
+  "00:30:00": 
+    prompt: "A post-apocalyptic cityscape, buildings subtly resemble towering organic creatures, heavy fog"
+    seed: 88
+  "01:00:00": 
+    prompt: "Giant terrifying Lovecraftian creatures standing in the fog, formerly buildings"
+    seed: 1024

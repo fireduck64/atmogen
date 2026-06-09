@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_6
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "A dense forest of tall, gnarled birch trees in deep autumn. The ground is carpeted with rotting crimson leaves and thick white fog. An ancient, hollowed hollow tree stump sits in the foreground."
+    seed: 30
+  "00:03:00": 
+    prompt: "The gnarled birch trees slowly twist and bend like agonizing fingers. The ground begins to sprout giant, weeping mycelial networks and pulsing orange bracket fungi. The white fog turns to a heavy, rust-colored mist."
+    seed: 40
+  "00:06:00": 
+    prompt: "A breathing red forest hive. The tree trunks are now pillars of fibrous red tendons and fungal stalks dripping orange spores. The ancient hollow stump has blossomed into a glowing chthonic spore pod under a pitch-black sky."
+    seed: 50
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "organic bleeding forest drones, crunching leaves, pulsing fungal mycelium pads, eerie woods wind chimes, chthonic nature hum"

@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_2
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.55
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "A solitary stone lighthouse standing on a jagged cliff edge overlooking a turbulent, pitch-black ocean. Heavy storm clouds churn overhead in shades of violet and charcoal. Churning ocean mist sprays the dark rocks."
+    seed: 77
+  "00:03:00": 
+    prompt: "The lighthouse stone cracks, revealing a wet, obsidian organic structure underneath. The light on top begins to pulse with a low, fleshy magenta beacon. The churning sea below glows with cold blue bioluminescence."
+    seed: 88
+  "00:06:00": 
+    prompt: "A towering eldritch obelisk of glistening black flesh and nested bone structures. On top, a massive, unblinking cosmic eye stares into the stormy void, casting a beam of violet light across the roaring, tentacle-filled sea."
+    seed: 99
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "thunderous dark sea waves, churning metallic storm drone, howling wind pads, massive chthonic marine horns, oceanic dread"

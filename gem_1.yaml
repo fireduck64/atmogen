@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_1
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "A murky stagnant swamp bayou under a blood-red sunset. Gnarly cypress trees draped in heavy Spanish moss stand in dark, glassy water. A decayed wooden boardwalk sinks slowly into the duckweed on the right."
+    seed: 111
+  "00:03:00": 
+    prompt: "The bayou water begins to pulse and simmer. Cypress roots and Spanish moss grow thicker, mutating into writhing pale tendrils and weeping black sap. A sinister green bioluminescent glow emanates from beneath the dark water."
+    seed: 222
+  "00:06:00": 
+    prompt: "An alien, necrotic marshlands. The moss and trees have completely morphed into towering, weeping fungal growths and slimy black tentacles reaching toward a sky of swirling indigo dust. Bioluminescent spores drift through the toxic mist."
+    seed: 333
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "eerie stagnant swamp ambiance, slow organic low-end pulsations, moist bubbling textures, wet swampy drone, chthonic nature"

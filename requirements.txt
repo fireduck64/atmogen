@@ -1,0 +1,12 @@
+torch
+torchvision
+diffusers
+transformers
+accelerate
+pyyaml
+click
+scipy
+pillow
+opencv-python
+imageio[ffmpeg]
+elevenlabs

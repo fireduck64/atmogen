@@ -1,0 +1,16 @@
+# Virtual Environment
+venv/
+
+# Output folder (generations, previews, final videos)
+output/
+
+# Secrets (API keys)
+.env
+
+# Python Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/

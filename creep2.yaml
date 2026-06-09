@@ -1,0 +1,21 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 5
+  output_fps: 30
+  output_dir: output/creep2-rife
+  sparse_fps: 0.2  # Generates 1 frame every 5 seconds
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.3
+keyframes:
+  "00:00:00": 
+    prompt: "A desolate post-apocalyptic cityscape, heavy fog, brutalist architecture.  There are no cars or people.  We are looking down a street, off to the right is a small park.  It has a black metal fence and some trees that are green and overgrown.  paint birth."
+    seed: 12
+  "00:02:30": 
+    prompt: "A post-apocalyptic cityscape, buildings subtly resemble towering organic creatures, heavy fog. paint birth."
+    seed: 912
+  "00:05:00": 
+    prompt: "Giant terrifying Lovecraftian creatures standing in the fog, formerly buildings.  There are some sinister looking clowns in the distance. paint birth."
+    seed: 822

@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_4
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "An abandoned brutalist oil refinery at twilight, massive rusting pipes and high towers stretching into a sickly yellow sky. Heavy black smoke hangs motionless in the cold air. Cracks in the concrete show dirty oil pools."
+    seed: 1001
+  "00:03:00": 
+    prompt: "The rusting refinery pipes begin to fuse and morph. The metal acquires a wet, muscular texture, with copper wiring spreading like nervous networks across the towers. Steam rises from venting, skin-like membranes."
+    seed: 1002
+  "00:06:00": 
+    prompt: "A massive biomechanical hive of steel, copper, and pulsing muscle. Colossal towers breathe steam through fleshy chimneys, under a dark sky illuminated by flickering electrical discharge and sulfurous smog."
+    seed: 1003
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "industrial clanging, slow heavy metallic drones, rhythmic steam venting, pulsing copper wire hum, cyber horror ambiance"

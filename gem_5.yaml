@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_5
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "An endless desolate arctic glacier field under a dim twilight sun. Jagged monoliths of pale blue ice rise from the snow. A massive creviced cave mouth opens in the center, pitch black and silent."
+    seed: 505
+  "00:03:00": 
+    prompt: "The glacier ice begins to slowly melt and turn translucent. Frozen deep within the blue ice are colossal, rib-like stone structures and glowing turquoise geometric runes. Cold white steam drifts from the crevasses."
+    seed: 606
+  "00:06:00": 
+    prompt: "An ancient, uncovered chthonic temple of dark basalt and ice. Colossal carved pillars resembling skeletal hands rise from the snow, under a cosmic aurora of swirling emerald and obsidian."
+    seed: 707
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "cold freezing glacial drones, crystalline chimes, massive echoing sub-bass, arctic howling wind pads, frozen deep cavern reverbs"

@@ -1,0 +1,31 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 6
+  output_fps: 30
+  output_dir: output/gem_8
+  sparse_fps: 0.05  # Generates 1 frame every 20 seconds
+engine: "local"
+flux_all_sparse: false
+flux_img2img: false
+flux_denoise_strength: 0.95
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.35
+keyframes:
+  "00:00:00": 
+    prompt: "A dark sunken Victorian city submerged under a pitch-black ocean. Elegant stone buildings and streetlamps are covered in dark green kelp and barnacles. Tiny bioluminescent fish drift past the windows."
+    seed: 1200
+  "00:03:00": 
+    prompt: "The sunken buildings warp and mutate. Fleshy, purple sea anemones and giant pulsing coral structures bloom from the stone facades. Giant, worm-like tentacles weave slowly through the empty streets."
+    seed: 1300
+  "00:06:00": 
+    prompt: "An abyssal, organic deep-sea necropolis. The buildings have been entirely consumed by colossal, breathing bioluminescent polyps and fleshy aquatic monoliths. Massive shadows of multi-tentacled leviathans swim in the distant dark."
+    seed: 1400
+
+soundtrack:
+  enabled: true
+  model: "facebook/musicgen-medium"
+  engine: "elevenlabs"
+  prompt: "abyssal deep sea pressure hum, muffled underwater Victorian bells, low submarine sonar pings, leviathan echoing groans, drowned cathedral"

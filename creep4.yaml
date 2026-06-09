@@ -1,0 +1,21 @@
+video:
+  width: 3840
+  height: 2160
+  duration_minutes: 30
+  output_fps: 30
+  output_dir: output/creep4
+  sparse_fps: 0.2  # Generates 1 frame every 5 seconds
+controlnet:
+  enabled: true
+  type: "depth"
+  control_strength: 0.3
+keyframes:
+  "00:00:00": 
+    prompt: "A silent, forgotten brutalist metropolis swallowed by a thick, pearlescent fog. Desolate empty asphalt street stretching into the gloom, completely devoid of life. On the right, a small neglected park bound by a rusted, ornate wrought-iron fence; overgrown, weeping emerald trees droop heavily over the spikes. Low-contrast, eerie cinematic morning light, highly detailed."
+    seed: 912
+  "00:15:00": 
+    prompt: "A slow-morphing brutalist cityscape under suffocating grey mist. The concrete towers are breathing, their facades subtly bulging with veins and weeping black sap, revealing ribs and calcified structures beneath the masonry. In the park on the right, the overgrown trees warp into pulsing, lichen-covered appendages reaching towards the sky. Surreal organic mutation, slow cosmic birthing, unsettling detailed textures."
+    seed: 331
+  "00:30:00": 
+    prompt: "A terrifying cosmic horror dreamscape. The buildings have fully transformed into colossal, multi-eyed Lovecraftian monoliths breathing and writhing in the heavy, sulfurous fog. Wet, fleshy, biomechanical architecture with pulsating veins and towering tentacles. In the distant street, towering, elongated, sinister clown-like aberrations with hollow white eyes flicker within the shroud of mist. Pure nightmare fuel, detailed organic horror, masterpiece."
+    seed: 234
