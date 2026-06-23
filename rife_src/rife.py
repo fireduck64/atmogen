@@ -123,8 +123,8 @@ def interpolate(args): # pylint: disable=redefined-outer-name
             I0_small = F.interpolate(I0, (32, 32), mode='bilinear', align_corners=False)
             I1_small = F.interpolate(I1, (32, 32), mode='bilinear', align_corners=False)
             ssim = ssim_matlab(I0_small[:, :3], I1_small[:, :3])
-            if ssim > 0.99: # skip duplicate frames
-                continue
+            # if ssim > 0.99: # skip duplicate frames
+            #     continue
             if ssim < args.change:
                 output = []
                 for _i in range(args.buffer): # fill frames if change rate is above threshold

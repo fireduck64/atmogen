@@ -1,7 +1,7 @@
 import yaml
 import os
 from dataclasses import dataclass
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 @dataclass
 class Keyframe:
@@ -17,6 +17,7 @@ class VideoConfig:
     duration_minutes: int
     output_fps: int
     sparse_fps: float
+    input_video: Optional[str] = None
 
 @dataclass
 class ControlNetConfig:
@@ -25,10 +26,20 @@ class ControlNetConfig:
     control_strength: float
 
 @dataclass
-class SoundtrackConfig:
-    enabled: bool
+class AudioAssetConfig:
+    slug: str
+    revision: int
+    engine: str
     model: str
     prompt: str
+
+@dataclass
+class SoundtrackConfig:
+    enabled: bool
+    asset_slug: str
+    asset_revision: int = 1
+    # Kept for backward compatibility or metadata purposes, but not used for generation during render
+    prompt: str = ""
     engine: str = "local"
 
 @dataclass
@@ -64,6 +75,19 @@ def parse_time_to_seconds(time_str: str) -> int:
     else:
         raise ValueError(f"Invalid time format: {time_str}")
 
+def load_audio_config(file_path: str) -> AudioAssetConfig:
+    load_env()
+    with open(file_path, 'r') as f:
+        data = yaml.safe_load(f)
+
+    return AudioAssetConfig(
+        slug=data.get('slug', 'default'),
+        revision=int(data.get('revision', 1)),
+        engine=data.get('engine', 'local'),
+        model=data.get('model', 'facebook/musicgen-medium'),
+        prompt=data.get('prompt', '')
+    )
+
 def load_config(file_path: str) -> AtmogenConfig:
     load_env()
     with open(file_path, 'r') as f:
@@ -75,7 +99,8 @@ def load_config(file_path: str) -> AtmogenConfig:
         height=v_data.get('height', 576),
         duration_minutes=v_data.get('duration_minutes', 60),
         output_fps=v_data.get('output_fps', 30),
-        sparse_fps=v_data.get('sparse_fps', 0.2)
+        sparse_fps=v_data.get('sparse_fps', 0.2),
+        input_video=v_data.get('input_video')
     )
 
     k_data = data.get('keyframes', {})
@@ -117,12 +142,13 @@ def load_config(file_path: str) -> AtmogenConfig:
     else:
         flux_denoise_strength = data.get('flux_denoise_strength', 0.3)
         
-    # Parse soundtrack config
+    # Parse soundtrack config - and update to new library system
     s_data = data.get('soundtrack', {})
     soundtrack_config = SoundtrackConfig(
         enabled=s_data.get('enabled', False),
-        model=s_data.get('model', 'facebook/musicgen-medium'),
-        prompt=s_data.get('prompt', 'slow deep dark industrial drone, low ambient chthonic pads, gothic, horror'),
+        asset_slug=s_data.get('asset_slug', 'default'),
+        asset_revision=int(s_data.get('asset_revision', 1)),
+        prompt=s_data.get('prompt', ''),
         engine=s_data.get('engine', 'local')
     )
     
